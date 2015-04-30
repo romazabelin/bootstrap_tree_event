@@ -1,0 +1,16 @@
+$('#tree').on('nodeSelected', function(event, node) {
+        $("#product_list_block").show();
+        parent_cat_id = node.category_id;
+        filterProductByCategory(parent_cat_id);
+        initDroppableCategory();
+    });
+
+    $('#tree').on('nodeCollapsed', function(event, node) {
+        console.log("nodeCollapsed");
+        initDroppableCategory();
+    });
+
+    $('#tree').on('nodeExpanded', function(event, node) {
+        console.log("nodeExpanded");
+        initDroppableCategory();
+    });
